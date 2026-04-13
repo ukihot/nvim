@@ -1,6 +1,7 @@
 return {
   {
     "stevearc/oil.nvim",
+    lazy = false,
     cmd = { "Oil" },
     keys = {
       { "-", "<cmd>Oil<CR>", desc = "親ディレクトリを開く" },
@@ -107,8 +108,6 @@ return {
         ["gx"] = "actions.open_external",
         ["g."] = "actions.toggle_hidden", -- 隠しファイル表示切り替え
         ["g\\"] = "actions.toggle_trash", -- ゴミ箱表示切り替え
-        -- 新規作成
-        ["<C-n>"] = "actions.create",
         -- コピー・移動・削除
         ["yy"] = "actions.copy_entry_path",
         ["yn"] = "actions.copy_entry_filename",

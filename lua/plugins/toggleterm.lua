@@ -8,7 +8,7 @@ return {
     opts = {
       size = 15,
       open_mapping = false, -- 自前で管理
-      direction = "horizontal",
+      direction = "vertical",
       start_in_insert = true,
       insert_mappings = true,
       terminal_mappings = true,
