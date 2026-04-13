@@ -46,5 +46,12 @@ return {
     progress = {
       enabled = true,
     },
+
+    -- レトロ風ボーダー統一
+    views = {
+      cmdline_popup = { border = { style = "single" } },
+      hover = { border = { style = "single" } },
+      popup = { border = { style = "single" } },
+    },
   },
 }
