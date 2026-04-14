@@ -9,6 +9,7 @@
 - [ウィンドウ・タブ管理](#ウィンドウタブ管理)
 - [プラグイン別操作](#プラグイン別操作)
 - [LSP機能](#lsp機能)
+- [開発環境](#開発環境)
 - [その他](#その他)
 
 ---
@@ -318,3 +319,53 @@ LSPが接続されているとき、以下のキーが使用できます：
 3. **キーマップ確認**: `<leader>` を押して300ms待つ
 4. **フォーマット手動実行**: `:ConformInfo` でフォーマッタの状態確認
 5. **LSP状態確認**: `:LspInfo` でLSPの接続状態確認
+
+---
+
+## 開発環境
+
+### stylua による Lua コード フォーマット
+
+stylua は Lua コードを自動的にフォーマットするツールです。
+
+#### セットアップ
+
+1. **stylua をインストール**
+
+   ```bash
+   # Windows (Scoop)
+   scoop install stylua
+
+   # macOS (Homebrew)
+   brew install stylua
+
+   # Linux (Cargo)
+   cargo install stylua
+   ```
+
+2. **設定ファイル（`.stylua.toml`）**
+
+   プロジェクトルートに `.stylua.toml` が配置されており、以下の設定項目が含まれています：
+   - `column_width`: 1行の最大文字数（120）
+   - `indent_width`: インデント幅（2スペース）
+   - `quote_style`: クォートのスタイル（シングル優先）
+
+#### 実行方法
+
+```bash
+# 全ての Lua ファイルをフォーマット
+stylua lua/
+
+# 特定のファイルをフォーマット
+stylua lua/config/keymaps.lua
+
+# ドライラン（変更内容を確認のみ）
+stylua --check lua/
+
+# 指定ディレクトリ配下の全ファイルをフォーマット
+stylua .
+```
+
+#### Neovim 内での使用
+
+conform.nvim が自動的に stylua を使用します。`:FormatWrite` で手動実行も可能です。
